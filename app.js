@@ -9,7 +9,12 @@ function randomSquare() {
     squares.forEach(square => {
         square.classList.remove('mole')
     })
-    let randomPosition = squares[Math.floor(Math.random() * 9)]//each of nine square randomly chosen, rounded down with floor 
+    let randomSquare = squares[Math.floor(Math.random() * 9)]//each of nine square randomly chosen, rounded down with floor 
+    randomSquare.classList.add('mole')//mole putting itself in a random square every time I refresh the page
 }
 
-randomSquare()
+function moveMole() {
+    let timerId = null
+    timerId = setInterval(randomSquare, 500)//start timer with page load but would work withut that line. With it, timer button can be added
+}
+moveMole()
